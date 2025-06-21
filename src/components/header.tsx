@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { SubmitPostDialog } from './submit-post-dialog';
 import { ProposeModificationDialog } from './propose-modification-dialog';
-import { FileText, PlusCircle } from 'lucide-react';
+import { FileText, PlusCircle, BookOpen } from 'lucide-react';
 
 export function Header() {
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
@@ -17,6 +18,12 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Logo />
           <div className="flex items-center gap-2">
+            <Button variant="ghost" asChild>
+              <Link href="/contribute">
+                <BookOpen />
+                Contribute
+              </Link>
+            </Button>
             <Button variant="ghost" onClick={() => setIsSubmitOpen(true)}>
               <PlusCircle />
               Submit Post
