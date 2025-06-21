@@ -67,7 +67,7 @@ export function ProposalImpactCharts() {
             <CardHeader>
                 <CardTitle>Predicted Reach for User Groups</CardTitle>
                 <CardDescription>New users’ posts get 15% more average reach.</CardDescription>
-            </Header>
+            </CardHeader>
             <CardContent>
                 <ChartContainer config={chartConfig} className="min-h-[250px] w-full">
                     <BarChart accessibilityLayer data={reachData}>
@@ -97,7 +97,7 @@ export function ProposalImpactCharts() {
             <CardHeader>
                 <CardTitle>Bias Reduction Analysis</CardTitle>
                 <CardDescription>Reduced bias towards early likes.</CardDescription>
-            </Header>
+            </CardHeader>
             <CardContent>
                  <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
                     <BarChart accessibilityLayer data={biasData} layout="vertical">
