@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Heart, MessageCircle, Info } from 'lucide-react';
 import type { Post } from '@/lib/types';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -22,7 +23,9 @@ export function PostCard({ post }: PostCardProps) {
         </Avatar>
         <div className="flex-1">
           <p className="font-semibold">{post.author.name}</p>
-          <p className="text-sm text-muted-foreground">{post.createdAt}</p>
+          <Link href={`/post/${post.id}`} className="text-sm text-muted-foreground hover:underline">
+            {post.createdAt}
+          </Link>
         </div>
         <Popover>
           <PopoverTrigger asChild>
