@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Bot, Loader2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -12,6 +12,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
 import type { AnalyzeAlgorithmImpactOutput } from '@/ai/flows/analyze-algorithm-impact';
+import { Lightbulb } from 'lucide-react';
+import { getScoringSuggestions } from '@/lib/scoringSuggester';
 
 
 interface ProposeModificationDialogProps {
@@ -25,6 +27,8 @@ export function ProposeModificationDialog({ open, onOpenChange }: ProposeModific
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<AnalyzeAlgorithmImpactOutput | null>(null);
   const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [scoringSuggestions, setScoringSuggestions] = useState<string | null>(null);
+  const [isSuggesting, setIsSuggesting] = useState(false);
 
   const handleAnalyzeImpact = async () => {
     setIsAnalyzing(true);
@@ -37,6 +41,14 @@ export function ProposeModificationDialog({ open, onOpenChange }: ProposeModific
       setAnalysisError(result.error ?? 'An unknown error occurred.');
     }
     setIsAnalyzing(false);
+  };
+
+  const handleGetSuggestions = async () => {
+    setScoringSuggestions(null);
+    setIsSuggesting(true);
+    const suggestions = await getScoringSuggestions(description);
+    setScoringSuggestions(suggestions);
+    setIsSuggesting(false);
   };
 
   const handleFormAction = async (formData: FormData) => {
