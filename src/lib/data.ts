@@ -8,7 +8,7 @@ export const currentAlgorithm = {
 export const posts: Post[] = [
   {
     id: '1',
-    author: { name: 'Alice', avatarUrl: 'https://placehold.co/40x40.png' },
+    author: { name: 'Alice', avatarUrl: 'https://i.postimg.cc/BXF03jbL/istockphoto-1437816897-612x612.jpg' },
     content: 'Just discovered an amazing new paradigm for state management in large-scale apps. It simplifies everything! #dev #react',
     imageUrl: 'https://i.postimg.cc/6yPSPYzd/tackling-state-management-in-large-react-applications-best-practices-and-testing-strategies-0-fba2c5.jpg',
     'data-ai-hint': 'react code',
@@ -25,7 +25,7 @@ export const posts: Post[] = [
   },
   {
     id: '2',
-    author: { name: 'Bob', avatarUrl: 'https://placehold.co/40x40.png' },
+    author: { name: 'Bob', avatarUrl: 'https://i.postimg.cc/yDzz873f/premium-photo-1689568126014-06fea9d5d341.jpg' },
     content: 'Exploring the ethics of AI in content generation. It\'s a fascinating and complex topic with huge implications for the future.',
     imageUrl: 'https://i.postimg.cc/DWkNv090/1685646786793.png',
     'data-ai-hint': 'AI ethics',
@@ -42,7 +42,7 @@ export const posts: Post[] = [
   },
   {
     id: '3',
-    author: { name: 'Charlie', avatarUrl: 'https://placehold.co/40x40.png' },
+    author: { name: 'Charlie', avatarUrl: 'https://i.postimg.cc/ph1HW8K8/premium-photo-1661866803933-17fc0cf78150.jpg' },
     content: 'Check out this beautiful photo I took during my hike this morning. Nature is the best artist.',
     imageUrl: 'https://i.postimg.cc/svxqKtPj/istockphoto-1403500817-612x612.jpg',
     'data-ai-hint': "nature landscape",
